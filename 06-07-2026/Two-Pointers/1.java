@@ -31,3 +31,41 @@ public class Main{
     }
 }
 
+
+//ALTENATE CODE
+
+public static String ticketMaker(String str) {
+    int m = 0;
+    String modstr = "";
+
+    while (m < str.length()) {
+
+        // Remove "EF"
+        if (m + 1 < str.length() && str.charAt(m) == 'E' && str.charAt(m + 1) == 'F') {
+            m += 2;
+            continue;
+        }
+
+        // Remove 'G'
+        if (str.charAt(m) == 'G') {
+            m++;
+            continue;
+        }
+
+        // Keep current character
+        modstr += str.charAt(m);
+        m++;
+    }
+
+    return modstr;
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String sarah = sc.nextLine();
+        System.out.println(ticketMaker(sarah));
+
+        
+            
+        }
+
